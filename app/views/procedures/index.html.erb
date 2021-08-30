@@ -1,2 +1,8 @@
-<h1>Procedures#index</h1>
-<p>Find me in app/views/procedures/index.html.erb</p>
+<h1>Procedures</h1>
+<div><% @procedures.each do |procedure| %> </div>
+<div>
+  <h4>
+  <%= procedure.title %>
+  </h4>
+</div>
+<% end %>
