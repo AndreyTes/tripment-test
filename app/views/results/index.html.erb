@@ -1,5 +1,5 @@
 <h3>Результаты поиска по запросу <em><%= params[:query]%></em></h3>
 <% @search_results.each do |result| %>
-  <h4><%= link_to result.title, result %></h4>
+  <h4><%=  result.title %></h4>
   <hr>
 <% end %>
