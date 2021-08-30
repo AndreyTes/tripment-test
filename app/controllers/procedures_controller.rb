@@ -1,5 +1,5 @@
 class ProceduresController < ApplicationController
   def index
-    @procedures = Procedure.all
+    render json: Procedure.search(params[:query])
   end
 end
