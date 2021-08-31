@@ -1,0 +1,23 @@
+<h2>New procedure</h2>
+<%= form_for Procedure.new do |f| %>
+  <%= f.text_field :title %>
+  <%= f.submit "Create" %>
+<% end %>
+
+<h2>Procedures list:</h2>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Title</th>
+    <th>Created at</th>
+    <th></th>
+  </tr>
+  <%= Procedure.find_each do |procedure|  %>
+    <tr>
+      <td> <%= procedure.id %></td>
+      <td> <%= procedure.title %></td>
+      <td> <%= procedure.created_at.strftime('%F') %></td>
+      <td> <%= link_to 'Destroy',  procedure_path(procedure), data: { confirm: 'Are you sure?' }, method: :delete %></td>
+    </tr>
+  <% end %>
+  
