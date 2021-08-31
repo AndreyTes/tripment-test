@@ -20,5 +20,10 @@ RSpec.describe ProceduresController, type: :request  do
       expect(json[0]['title']).to eq 'Test procedure'
       expect(json[1]['title']).to eq 'Biopsy test'
     end
+   
+    it 'add procedure' do
+      post procedures_path, params: {procedure: {title: 'Endoscopy'} }
+      expect(Procedure.find_by(title: 'Endoscopy')).to be_truthy
+    end
   end
 end
