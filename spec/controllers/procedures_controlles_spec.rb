@@ -25,5 +25,6 @@ RSpec.describe ProceduresController, type: :request  do
       post procedures_path, params: {procedure: {title: 'Endoscopy'} }
       expect(Procedure.find_by(title: 'Endoscopy')).to be_truthy
     end
+
   end
 end
